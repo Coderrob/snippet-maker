@@ -1,14 +1,9 @@
 {
-  "name": "snippet-maker",
-  "version": "1.0.0",
-  "description": "General script to create Visual Studio Code snippets.",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
   "author": "",
-  "license": "ISC",
+  "dependencies": {
+    "js-yaml": "^4.1.0"
+  },
+  "description": "General script to create Visual Studio Code snippets.",
   "devDependencies": {
     "@eslint/js": "^9.20.0",
     "@types/jest": "^29.5.14",
@@ -20,8 +15,18 @@
     "ts-jest": "^29.2.5",
     "typescript-eslint": "^8.24.0"
   },
+  "keywords": [],
+  "license": "ISC",
+  "main": "index.js",
+  "name": "snippet-maker",
   "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e",
-  "dependencies": {
-    "js-yaml": "^4.1.0"
-  }
+  "scripts": {
+    "build": "tsc",
+    "format": "prettier --write 'src/**/*.{ts,tsx,json,md}'",
+    "lint": "eslint 'src/**/*.{ts,tsx}'",
+    "snippet": "ts-node src/snippet-generator.ts",
+    "start": "node dist/snippet-generator.js",
+    "test": "jest"
+  },
+  "version": "1.0.0"
 }
